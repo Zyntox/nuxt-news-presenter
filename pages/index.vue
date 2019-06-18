@@ -2,24 +2,25 @@
   <div class="container">
     <div>
       <h2 class="subtitle">
-        Företag
+        Välj Företag
       </h2>
-      <nuxt-link to="/companies/ica">ICA</nuxt-link>
-      <nuxt-link to="/companies/spotify">Spotify</nuxt-link>
+      <nuxt-link to="/ica">ICA</nuxt-link>
+      <nuxt-link to="/spotify">Spotify</nuxt-link>
     </div>
   </div>
 </template>
 
 <script>
-// import Logo from '~/components/Logo.vue'
-
+import CompanySelector from '~/components/CompanySelector.vue';
 export default {
-  components: {},
+  components: {
+    CompanySelector,
+  },
   transition: 'page',
 }
 </script>
 
-<style>
+<style lang="scss">
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -27,6 +28,22 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  a{
+    color: #696969;
+    display: inline-block;
+    font-size: 25px;
+    margin: 50px 20px;
+    text-decoration: none;
+    transition: 0.5s color;
+
+    &:hover{
+      color: #856093;
+    }
+
+  }
+
+
 }
 
 .subtitle {
@@ -37,7 +54,4 @@ export default {
   padding-bottom: 15px;
 }
 
-.links {
-  padding-top: 15px;
-}
 </style>

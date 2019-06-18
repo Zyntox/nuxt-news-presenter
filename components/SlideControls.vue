@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="slide-controls">
+  <div :class="`slide-controls ${ theme }-pane-theme`">
     <div
       class="arrow"
       v-show="activeItem > 1"
@@ -21,26 +21,23 @@
 <script>
 export default {
   name: 'SlideControls',
-  props: ['totalItem'],
-  data(){
-    return {
-      activeItem: 1,
-    }
-  },
+  props: ['activeItem', 'totalItem', 'theme'],
   methods: {
     slideToNextPane(){
       let slidesList = document.getElementById('news-section');
       let slides = document.getElementById('news-section').childNodes;
 
       slidesList.style.transform = `translateY(-${slides[0].offsetHeight * this.activeItem}px)`
-      this.activeItem++;
+      // this.activeItem++;
+      this.$emit('on-update', 'next');
     },
     slideToPreviousPane(){
       let slidesList = document.getElementById('news-section');
       let slides = document.getElementById('news-section').childNodes;
 
       slidesList.style.transform = `translateY(-${slides[0].offsetHeight * (this.activeItem - 2)}px)`
-      this.activeItem--;
+      // this.activeItem--;
+      this.$emit('on-update', 'previous');
     }
   },
 }
@@ -57,8 +54,18 @@ export default {
   justify-content: center;
   align-items: center;
   font-weight: 100;
+  transition: 1s color;
+
+  &.light-pane-theme{
+    color: #000;
+  }
+
+  &.dark-pane-theme{
+    color: #fff;
+  }
 
   .numbering{
+    text-align: center;
     width: 150px;
   }
 
