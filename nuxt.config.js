@@ -17,7 +17,7 @@ export default {
   },
   router: {
     base: '/nuxt-news-presenter/'
-  }
+  },
   /*
   ** Customize the progress-bar color
   */
