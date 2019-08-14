@@ -6,6 +6,9 @@
       </h2>
       <nuxt-link to="/ica">ICA</nuxt-link>
       <nuxt-link to="/spotify">Spotify</nuxt-link>
+      <nuxt-link to="/Telenor">Telenor</nuxt-link>
+      <nuxt-link to="/Bonnier">Bonnier News</nuxt-link>
+      <nuxt-link to="/tre">Tre</nuxt-link>
     </div>
   </div>
 </template>

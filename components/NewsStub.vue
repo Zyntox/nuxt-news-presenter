@@ -1,3 +1,16 @@
+<!--
+  This is the news stub component, used for listing one single news pane in the
+  presentation.
+
+  Props:
+  @imageUrl: string - as the name implies, the url to the image that will be displayed
+                      to the left of the article body.
+  @title: string    - The title of the news article.
+  @source: string   - The soruce/ where the news article comes from.
+  @date: string     - The date when the news article was written.
+  @body: string     - The body of the news article,
+-->
+
 <template lang="html">
   <div class="news-stub">
     <div
@@ -15,7 +28,7 @@
             </div>
           </div>
         </div>
-        <div class="main-text" v-html="text"></div>
+        <div class="main-text" v-html="body"></div>
       </div>
     </div>
   </div>
@@ -24,7 +37,7 @@
 <script>
 export default {
   name: 'NewsStub',
-  props: ['imageUrl', 'title', 'source', 'date', 'text'],
+  props: ['imageUrl', 'title', 'source', 'date', 'body'],
 }
 </script>
 

@@ -26,12 +26,12 @@ import SlideControls from '~/components/SlideControls.vue';
 import SummaryPane from '~/components/SummaryPane.vue';
 
 export default {
-  name: 'Ica',
+  name: 'Spotify',
   components: {
     TitleScreen,
     NewsStub,
     SlideControls,
-    SummaryPane
+    SummaryPane,
   },
   data(){
     return {
@@ -42,32 +42,33 @@ export default {
         {
           theme: 'dark',
           componentType: 'TitleScreen',
-          company: 'ICA',
-          companyLogoUrl: 'ica-logo-black-and-white.png',
-          week: 24,
-          bgColor: '#eb1e06'
+          week: 25,
+          company: 'Tre',
+          companyLogoUrl: 'tre.png',
+          bgColor: '#ed9600',
         },
         {
           theme: 'light',
           componentType: 'NewsStub',
           category: 'news',
-          imageUrl: 'ica_spara.jpg',
+          imageUrl: 'barack-obama.jpg',
           source: {
-            label: 'Market',
-            url: 'https://www.market.se/nyhet/ica-iskallt-i-maj-forsaljningen-rasade-for-supermarket-och-nara'
+            label: 'Dagens industri',
+            url: 'https://www.di.se/nyheter/spotify-tecknar-avtal-med-paret-obama/'
           },
-          title: 'ICA inleder samarbete med Tink',
-          date: 'Tisdagen den 11:e Juni',
-          body: '<p>Appen <b>Ica Spara</b> integrerar <b>Tink</b> för att ge användarna en bättre överblick på deras konton och transaktioner. Upp till <b>25 olika banker och kort</b> kommer gå att visa i appen, vilket är <b>dubbelt</b> av vad som gått tidigare.</p>'
+          title: 'Presidentiellt Podcast sammarbete',
+          date: 'Måndagen den 10:e Juni',
+          body: '<p>Michelle och Barack Obamas produktionsbolag <b>"Higher Ground"</b> sluter flerårigt avtal med Spotify, där Higher Ground ämnar skapa podcasts exklusivt för Spotifys plattformar.</p><br><p>Nyheterna om avtalet bemöttes positivt och gjorde att Spotifys aktiekurs lyfte med <b>3,4 %</b> samma dag.</p>'
         },
         {
           theme: 'dark',
           componentType: 'SummaryPane',
           trends: [
-            'Inga trender har kunnats identifieras denna vecka.',
+            'Mycket tyder på upptrappning av företagets satsningar på podcast marknaden.'
           ],
           challenges: [
-            'Inga utmaningar har identifierats denna vecka.',
+            'Behöver motarbeta Apples framfart i USA när det kommer till musikmarknaden.',
+            'Behöver etablera sig bättre på internationella marknader där inhemska alternativ idag regerar.'
           ],
         }
       ],
@@ -82,29 +83,27 @@ export default {
       }
     }
   },
-  computed:{}
 }
 </script>
 
 <style lang="css" scoped>
 
-.company-container{
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
+  .company-container{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
 
-#news-section{
-  position: relative;
-  transition: 1s transform;
+  #news-section{
+    position: relative;
+    transition: 1s transform;
+  }
 
-}
-
-.pane-indicator{
-  position: absolute;
-  bottom: 150px;
-  right: 100px;
-}
+  .pane-indicator{
+    position: absolute;
+    bottom: 150px;
+    right: 100px;
+  }
 
 </style>

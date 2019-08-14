@@ -1,7 +1,20 @@
+
+<!--
+  This is the Title Screen component, it is used to list the company name,
+  company logotype and what week the proceeding news article are from.
+
+  Params:
+  @theme: string - Set if the theme is 'light' or 'dark'.
+  @company: string - The company the news are about.
+  @companyLogoUrl: string - The name of the company logo in assets folder.
+  @week: number - The week the articles were written.
+  @bgColor: string - a hexadecimal value for setting the panes background color.
+-->
+
 <template lang="html">
-  <div class="title-screen" :style="{ backgroundColor: bgColor }">
-    <nuxt-link to="/" class="back-navigation">Tillbaka</nuxt-link>
-    <div class="rectangle-container">
+  <div :class="`title-screen`" :style="{ backgroundColor: bgColor }">
+    <nuxt-link to="/" :class="`back-navigation ${ theme }-pane-theme`">Tillbaka</nuxt-link>
+    <div :class="`rectangle-container ${ theme }-pane-theme`">
       <div
         v-if="companyLogoUrl"
         class="company-logo-container"
@@ -17,6 +30,10 @@
 export default {
   name: 'TitleScreen',
   props: {
+    theme:{
+      type: String,
+      default() { return 'light' }
+    },
     company: {
       type: String,
       default() { return 'placeholder' }
@@ -58,6 +75,16 @@ export default {
       transition: 0.5s opacity;
       text-decoration: none;
 
+      &.light-pane-theme{
+        color: #000 !important;
+        border-color: #000;
+      }
+
+      &.dark-pane-theme{
+        color: #fff !important;
+        border-color: #fff;
+      }
+
       &:hover{
         opacity: 1;
       }
@@ -72,6 +99,14 @@ export default {
       align-items: center;
       flex-direction: column;
       color: #fff;
+
+      &.light-pane-theme{
+        color: #000 !important;
+      }
+
+      &.dark-pane-theme{
+        color: #fff !important;
+      }
 
       .company-logo-container{
         width: 200px;

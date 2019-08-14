@@ -1,3 +1,14 @@
+<!--
+  This is the Summary Pane component, it acts as a way to sumarize the gist of
+  news articles into bullet point lists.
+
+  Params:
+  @trends: array - An array listing the different trends that can be
+                   seen in the news.
+  @challenges: array - An array listing the different challenges that can be
+                       seen for the company.
+-->
+
 <template lang="html">
   <div class="summary-pane">
     <nuxt-link to="/" class="back-navigation">Tillbaka</nuxt-link>

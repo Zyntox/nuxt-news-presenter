@@ -1,3 +1,14 @@
+<!--
+  This is the Slide controls component, it is used to act as a GUI element for
+  the controls used to slide the presentation up or down.
+
+  Params:
+  @activeItem: number - The number representing the currently active slide.
+  @totalItem: number - The total number of all the slides combined.
+  @theme: string - String controlling if the displayed text of the component
+                   should be light or dark.
+-->
+
 <template lang="html">
   <div :class="`slide-controls ${ theme }-pane-theme`">
     <div
