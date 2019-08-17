@@ -1,6 +1,6 @@
 # nuxt-news-presenter
+This is the repository of a simple news-presenter for an internal project at a company which shall not be named here.
 
-> My stylish Nuxt.js project
 
 ## Build Setup
 
